@@ -81,10 +81,10 @@ input {
   border: 1px solid lightgrey;
   padding: 1rem;
   font-size: 16px;
+  font-weight: 600;
 }
 
 input::placeholder {
-  font-weight: 600;
   color:grey;
   
 }
@@ -102,12 +102,12 @@ img {
   color: var(--red);
   font-size: 11px;
   font-style: italic;
-  margin: .3rem 0 1.5rem 0;
+  margin: .5rem 0 1rem 0;
 }
 
 .hidden {
-  /* visibility: hidden;
-  margin: 0; */
+  visibility: hidden;
+  margin: .75rem 0 0 0;
 }
 
 button {
@@ -130,7 +130,6 @@ button:hover {
 
 
 .info {
-  /* width: 95%; */
   margin: 1rem auto;
   text-align: center;
   font-size: 12px;
@@ -144,8 +143,6 @@ button:hover {
 
 /* ATTRIBUTION */
 .attribution {
-  /* position: absolute; */
-  bottom: 5px;
   margin-top: 100px;
   font-size: 11px;
 }
@@ -158,7 +155,6 @@ button:hover {
     align-items: center;
   }
   .wrapper {
-    /* border: 1px solid green; */
     width: 500px;
   }
   
@@ -173,7 +169,6 @@ button:hover {
 
 @media only screen and (min-width: 1200px) {
   body {
-    /* padding: 0 5rem; */
     margin: 0 auto;
     flex-direction: row;
     justify-content: center;
