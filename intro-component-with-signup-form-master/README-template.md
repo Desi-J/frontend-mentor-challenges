@@ -4,21 +4,13 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
 
 ## Table of contents
 
-- [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
-## Overview
 
 ### The challenge
 
@@ -32,83 +24,62 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./images/desktop.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [here](https://your-solution-url.com)
+- Live Site URL: [here](https://your-live-site-url.com)
 
-## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- CSS variables
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+Wrapping each input tag, label, and small error tag in a div really helps with styling. This layout also makes grabbing the DOM elements easier with JavaScript
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div id="inputWrapper" class="input-wrapper">
+  <input type="text" name="firstName" id="firstName" placeholder="First Name">
+  <img class="hidden" id="error" src="./images/icon-error.svg" alt="error alert">
+  <small class="error hidden" id="error">First Name cannot be empty</small>
+</div>
 ```
+The CSS hidden attribute is a cool way to make an element disapear. Unlike  ```display: none;``` the hidden property won't remove margins.  
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+.hidden {
+  visibility: hidden;
+  margin: .75rem 0 0 0;
 }
+
 ```
+The querySelector function isn't just for the document object 😅. You can use it on any element ( that you've grabbed from the DOM ). I was able to grab the one error message I wanted. First I used the ```input.parentElement``` property to grab the inputWrapper element. Then I did a ```querySelectorAll("#error)``` to grab all the inputWrapper's children elements with an id of error. Gives a NodeList to loop over. NOT an array!
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+function removeError(input) {
+  const inputWrapper = input.parentElement;
+  const errorElements = inputWrapper.querySelectorAll("#error");
+
+  errorElements.forEach(element => {
+  element.classList.add("hidden");
+  });
+};
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [20 Web Projects With Vanilla Javascript](https://www.udemy.com/course/web-projects-with-vanilla-javascript/?src=sac&kw=20+web+projects) - This Udemy course by Brad Traversy is awesome and is literally the only reason I was able to do this challenge.
+- [JavaScript Form Validation](https://www.youtube.com/watch?v=CYlNJpltjMM) - This free YouTube video quickly goes over validating forms on the client side.
+- [Display vs Opacity vs Visibility](https://thisthat.dev/display-none-vs-opacity-0-vs-visibility-hidden/) - This is an amazing article which helped me finally understand. I'd recommend it to anyone still learning this concept.
+- [Where I got the regular expression for the email validation](https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript) 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@Desi-J](https://www.frontendmentor.io/profile/Desi-J)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**

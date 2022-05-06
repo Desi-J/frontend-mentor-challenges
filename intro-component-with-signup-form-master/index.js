@@ -4,7 +4,7 @@ const firstName = document.getElementById("firstName");
 const lastName = document.getElementById("lastName");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
-console.log('password',password)
+
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -37,6 +37,7 @@ function checkEmail() {
 function showError(input) {
   const parentElement = input.parentElement;
   const errorElements = parentElement.querySelectorAll("#error");
+  console.log('ee:',errorElements)
 
   errorElements.forEach(element => {
     element.classList.remove("hidden");
@@ -48,7 +49,6 @@ function showError(input) {
 function removeError(input) {
   const parentElement = input.parentElement;
   const errorElements = parentElement.querySelectorAll("#error");
-
   errorElements.forEach(element => {
   element.classList.add("hidden");
   });

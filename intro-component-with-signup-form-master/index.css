@@ -23,7 +23,6 @@ body {
 }
 
 .wrapper {
-  /* border: 1px solid purple; */
   margin-top: 2rem;
 }
 
@@ -36,8 +35,6 @@ a {
 .rounded {
   border-radius: 10px;
 }
-
-
 
 /* TOP WRAPPER */
 h1 {
@@ -54,15 +51,16 @@ p {
 /* BOTTOM WRAPPER */
 .purple-box {
   font-weight: 300;
-  /* width: 100%; */
   background-color: var(--purple);
   padding: 1rem 3rem;
   box-shadow: 0 .5rem 2px rgba(0,0,0,0.2);
 }
 
+strong {
+  letter-spacing: .5px;
+}
 
 /* form */
-
 form {
   background-color: white;
   padding: 1.5rem;
@@ -71,7 +69,6 @@ form {
 
 .input-wrapper {
   position: relative;
-  /* border: 1px solid navy; */
 
 }
 input {
@@ -128,7 +125,6 @@ button:hover {
   background-color:hsl(154, 59%, 55%)
 }
 
-
 .info {
   margin: 1rem auto;
   text-align: center;
@@ -173,9 +169,7 @@ button:hover {
     flex-direction: row;
     justify-content: center;
     background-image: url("./images/bg-intro-desktop.png");
-    height: 100vh;
-    border: 1px solid blue;
-  
+    height: 100vh;  
   }
 
   .wrapper {
