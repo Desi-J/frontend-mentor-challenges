@@ -37,21 +37,24 @@ function checkEmail() {
 function showError(input) {
   const parentElement = input.parentElement;
   const errorElements = parentElement.querySelectorAll("#error");
-  console.log('ee:',errorElements)
 
   errorElements.forEach(element => {
     element.classList.remove("hidden");
-    
   });
+
+  input.classList.remove("success");
 };
 
 //remove or don't show error message
 function removeError(input) {
   const parentElement = input.parentElement;
   const errorElements = parentElement.querySelectorAll("#error");
+  
   errorElements.forEach(element => {
-  element.classList.add("hidden");
+    element.classList.add("hidden");
   });
+
+  input.classList.add("success");
 };
 
 
