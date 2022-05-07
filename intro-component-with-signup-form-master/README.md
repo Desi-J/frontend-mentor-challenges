@@ -29,7 +29,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [here](https://your-solution-url.com)
+- Solution URL: [here](https://www.frontendmentor.io/solutions/intro-component-with-signup-form-r1PI_N789)
 - Live Site URL: [here](https://desi-j.github.io/frontend-mentor-challenges/intro-component-with-signup-form-master/index.html)
 
 
