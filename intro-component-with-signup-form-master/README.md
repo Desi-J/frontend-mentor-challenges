@@ -59,11 +59,11 @@ The CSS hidden attribute is a cool way to make an element disapear. Unlike  ```d
 }
 
 ```
-The querySelector function isn't just for the document object 😅. You can use it on any element ( that you've grabbed from the DOM ). I was able to grab the one error message I wanted. First I used the ```input.parentElement``` property to grab the inputWrapper element. Then I did a ```querySelectorAll("#error)``` to grab all the inputWrapper's children elements with an id of error. Gives a NodeList to loop over. NOT an array!
+The querySelector function isn't just for the document object 😅. You can use it on any element ( that you've grabbed from the DOM ). I was able to grab the one error message I wanted. First I used the ```input.parentElement``` property to grab the inputWrapper element. Then I did a ```querySelectorAll(".error)``` to grab all the inputWrapper's children elements with a class of error. Gives a NodeList to loop over. NOT an array!
 ```js
 function removeError(input) {
   const inputWrapper = input.parentElement;
-  const errorElements = inputWrapper.querySelectorAll("#error");
+  const errorElements = inputWrapper.querySelectorAll(".error");
 
   errorElements.forEach(element => {
   element.classList.add("hidden");
