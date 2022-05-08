@@ -36,7 +36,7 @@ function checkEmail() {
 //show error message
 function showError(input) {
   const parentElement = input.parentElement;
-  const errorElements = parentElement.querySelectorAll("#error");
+  const errorElements = parentElement.querySelectorAll(".error");
 
   errorElements.forEach(element => {
     element.classList.remove("hidden");
@@ -48,7 +48,7 @@ function showError(input) {
 //remove or don't show error message
 function removeError(input) {
   const parentElement = input.parentElement;
-  const errorElements = parentElement.querySelectorAll("#error");
+  const errorElements = parentElement.querySelectorAll(".error");
   
   errorElements.forEach(element => {
     element.classList.add("hidden");
